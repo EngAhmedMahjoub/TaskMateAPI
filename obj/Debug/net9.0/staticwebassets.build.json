@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "NmEqMjBfomz7YZ5zuyIzL0lDYkMTlb0wfzb3rggPH6E=",
+  "Source": "TaskMateAPI",
+  "BasePath": "_content/TaskMateAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
