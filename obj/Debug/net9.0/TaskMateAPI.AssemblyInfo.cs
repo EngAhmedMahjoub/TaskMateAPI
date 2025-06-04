@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskMateAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6fd091195a14e66ce41f305c7f80268ae8a054fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09543bc0b1cfd9cdb5672bcf6132abc02e47725b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaskMateAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaskMateAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

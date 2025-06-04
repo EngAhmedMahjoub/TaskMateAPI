@@ -31,3 +31,4 @@
 /home/ahmed/source/repos/TaskMateAPI/obj/Debug/net9.0/TaskMateAPI.pdb
 /home/ahmed/source/repos/TaskMateAPI/obj/Debug/net9.0/TaskMateAPI.genruntimeconfig.cache
 /home/ahmed/source/repos/TaskMateAPI/obj/Debug/net9.0/ref/TaskMateAPI.dll
+/home/ahmed/source/repos/TaskMateAPI/obj/Debug/net9.0/TaskMateAPI.sourcelink.json
