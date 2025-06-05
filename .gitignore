@@ -1,0 +1,10 @@
+# Ignore build output
+bin/
+obj/
+*.dll
+*.pdb
+*.sourcelink.json
+
+# Ignore user-specific files
+*.user
+*.vs/
