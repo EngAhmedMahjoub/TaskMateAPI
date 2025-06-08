@@ -6,5 +6,12 @@ obj/
 *.sourcelink.json
 
 # Ignore user-specific files
-*.user
-*.vs/
+bin/Debug/net9.0/TaskMateAPI.dll
+bin/Debug/net9.0/TaskMateAPI.pdb
+obj/Debug/net9.0/TaskMateAPI.AssemblyInfo.cs
+obj/Debug/net9.0/TaskMateAPI.AssemblyInfoInputs.cache
+obj/Debug/net9.0/TaskMateAPI.dll
+obj/Debug/net9.0/TaskMateAPI.pdb
+obj/Debug/net9.0/ref/TaskMateAPI.dll
+obj/Debug/net9.0/TaskMateAPI.sourcelink.json
+obj/Debug/net9.0/refint/TaskMateAPI.dll
