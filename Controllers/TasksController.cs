@@ -7,11 +7,7 @@ namespace TaskMateAPI.Controllers
     [Route("api/[controller]")]
     public class TasksController : ControllerBase
     {
-        private static List<TaskItem> tasks = new List<TaskItem>
-        {
-            new TaskItem { Id = 1, Title = "Sample Task 1", IsComplete = false },
-            new TaskItem { Id = 2, Title = "Sample Task 2", IsComplete = true }
-        };
+        private static List<TaskItem> tasks = new List<TaskItem>();
 
         [HttpGet]
         public ActionResult<IEnumerable<TaskItem>> Get() => Ok(tasks);
