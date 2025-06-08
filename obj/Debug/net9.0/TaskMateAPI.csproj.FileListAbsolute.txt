@@ -32,3 +32,6 @@
 /home/ahmed/source/repos/TaskMateAPI/obj/Debug/net9.0/TaskMateAPI.genruntimeconfig.cache
 /home/ahmed/source/repos/TaskMateAPI/obj/Debug/net9.0/ref/TaskMateAPI.dll
 /home/ahmed/source/repos/TaskMateAPI/obj/Debug/net9.0/TaskMateAPI.sourcelink.json
+/home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
