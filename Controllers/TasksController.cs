@@ -7,42 +7,44 @@ namespace TaskMateAPI.Controllers
     [Route("api/[controller]")]
     public class TasksController : ControllerBase
     {
-        private static List<TaskItem> tasks = new List<TaskItem>();
+        private static List<TaskItem> tasks = new();
 
         [HttpGet]
-        public ActionResult<IEnumerable<TaskItem>> Get() => Ok(tasks);
+        public ActionResult<IEnumerable<TaskItem>> GetAllTasks() => tasks;
 
         [HttpGet("{id}")]
-        public ActionResult<TaskItem> GetById(int id)
+        public ActionResult<TaskItem> GetTask(int id)
         {
             var task = tasks.FirstOrDefault(t => t.Id == id);
-            return task == null ? NotFound() : Ok(task);
+            return task is null ? NotFound() : task;
         }
 
         [HttpPost]
-        public ActionResult<TaskItem> Create(TaskItem task)
+        public ActionResult<TaskItem> CreateTask(TaskItem task)
         {
-            task.Id = tasks.Max(t => t.Id) + 1;
+            task.Id = tasks.Count + 1;
             tasks.Add(task);
-            return CreatedAtAction(nameof(GetById), new { id = task.Id }, task);
+            return CreatedAtAction(nameof(GetTask), new { id = task.Id }, task);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, TaskItem updated)
+        public IActionResult UpdateTask(int id, TaskItem updatedTask)
         {
             var task = tasks.FirstOrDefault(t => t.Id == id);
-            if (task == null) return NotFound();
+            if (task is null) return NotFound();
 
-            task.Title = updated.Title;
-            task.IsComplete = updated.IsComplete;
+            task.Title = updatedTask.Title;
+            task.Description = updatedTask.Description;
+            task.IsComplete = updatedTask.IsComplete;
+
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteTask(int id)
         {
             var task = tasks.FirstOrDefault(t => t.Id == id);
-            if (task == null) return NotFound();
+            if (task is null) return NotFound();
 
             tasks.Remove(task);
             return NoContent();
