@@ -19,8 +19,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<TaskDbContext>(options =>
-    options.UseSqlite("Data Source=tasks.db"));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddDbContext<TaskDbContext>(options =>
+    options.UseSqlite("Data Source=tasks.db"));
+    
 
 var app = builder.Build();
 
