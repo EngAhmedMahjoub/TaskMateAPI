@@ -30,37 +30,36 @@ namespace TaskMateAPI.Controllers
             return task;
         }
 
-
         [HttpPost]
         public async Task<ActionResult<TaskItem>> CreateTask(TaskItem task)
         {
             _context.Tasks.Add(task);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction(nameof(GetTask), new { id = task.Id }, task);
         }
 
-
         [HttpPut("{id}")]
-        public IActionResult UpdateTask(int id, TaskItem updatedTask)
+        public async Task<IActionResult> UpdateTask(int id, TaskItem updatedTask)
         {
-            var task = tasks.FirstOrDefault(t => t.Id == id);
-            if (task is null) return NotFound();
+            var existingTask = await _context.Tasks.FindAsync(id);
+            if (existingTask == null) return NotFound();
 
-            task.Title = updatedTask.Title;
-            task.Description = updatedTask.Description;
-            task.IsComplete = updatedTask.IsComplete;
+            existingTask.Title = updatedTask.Title;
+            existingTask.Description = updatedTask.Description;
+            existingTask.IsComplete = updatedTask.IsComplete;
 
+            await _context.SaveChangesAsync();
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteTask(int id)
+        public async Task<IActionResult> DeleteTask(int id)
         {
-            var task = tasks.FirstOrDefault(t => t.Id == id);
-            if (task is null) return NotFound();
+            var task = await _context.Tasks.FindAsync(id);
+            if (task == null) return NotFound();
 
-            tasks.Remove(task);
+            _context.Tasks.Remove(task);
+            await _context.SaveChangesAsync();
             return NoContent();
         }
     }
