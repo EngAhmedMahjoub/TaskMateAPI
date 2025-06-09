@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using TaskMateAPI.Data;
 using TaskMateAPI.Models;
 
 namespace TaskMateAPI.Controllers
@@ -7,25 +9,37 @@ namespace TaskMateAPI.Controllers
     [Route("api/[controller]")]
     public class TasksController : ControllerBase
     {
-        private static List<TaskItem> tasks = new();
+        private readonly TaskDbContext _context;
+
+        public TasksController(TaskDbContext context)
+        {
+            _context = context;
+        }
 
         [HttpGet]
-        public ActionResult<IEnumerable<TaskItem>> GetAllTasks() => tasks;
+        public async Task<ActionResult<IEnumerable<TaskItem>>> GetAllTasks()
+        {
+            return await _context.Tasks.ToListAsync();
+        }
 
         [HttpGet("{id}")]
-        public ActionResult<TaskItem> GetTask(int id)
+        public async Task<ActionResult<TaskItem>> GetTask(int id)
         {
-            var task = tasks.FirstOrDefault(t => t.Id == id);
-            return task is null ? NotFound() : task;
+            var task = await _context.Tasks.FindAsync(id);
+            if (task == null) return NotFound();
+            return task;
         }
 
+
         [HttpPost]
-        public ActionResult<TaskItem> CreateTask(TaskItem task)
+        public async Task<ActionResult<TaskItem>> CreateTask(TaskItem task)
         {
-            task.Id = tasks.Count + 1;
-            tasks.Add(task);
+            _context.Tasks.Add(task);
+            await _context.SaveChangesAsync();
+
             return CreatedAtAction(nameof(GetTask), new { id = task.Id }, task);
         }
+
 
         [HttpPut("{id}")]
         public IActionResult UpdateTask(int id, TaskItem updatedTask)
