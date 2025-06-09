@@ -18,3 +18,5 @@ obj/Debug/net9.0/refint/TaskMateAPI.dll
 TaskMateAPI.sln
 TaskMateAPI.db
 tasks.db
+tasks.db-shm
+tasks.db-wal
