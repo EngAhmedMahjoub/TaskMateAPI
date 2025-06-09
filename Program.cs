@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using TaskMateAPI.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options =>
@@ -15,6 +18,9 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<TaskDbContext>(options =>
+    options.UseSqlite("Data Source=tasks.db"));
+
 
 var app = builder.Build();
 
