@@ -7,6 +7,7 @@ namespace TaskMateAPI.Data
     {
         public TaskDbContext(DbContextOptions<TaskDbContext> options) : base(options) { }
 
+        public DbSet<User> Users => Set<User>();
         public DbSet<TaskItem> Tasks => Set<TaskItem>();
     }
 }
