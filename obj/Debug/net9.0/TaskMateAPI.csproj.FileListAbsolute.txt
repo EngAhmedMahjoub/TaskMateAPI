@@ -157,3 +157,11 @@
 /home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/runtimes/win-arm64/native/e_sqlite3.dll
 /home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/runtimes/win-x64/native/e_sqlite3.dll
 /home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/runtimes/win-x86/native/e_sqlite3.dll
+/home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
+/home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+/home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
+/home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
+/home/ahmed/source/repos/TaskMateAPI/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
