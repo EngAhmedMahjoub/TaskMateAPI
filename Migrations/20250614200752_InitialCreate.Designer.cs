@@ -10,7 +10,7 @@ using TaskMateAPI.Data;
 namespace TaskMateAPI.Migrations
 {
     [DbContext(typeof(TaskDbContext))]
-    [Migration("20250609041837_InitialCreate")]
+    [Migration("20250614200752_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
